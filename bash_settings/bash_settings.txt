@@ -2,8 +2,6 @@
 export PS1="\h :\w$ "
 export EDITOR=/usr/bin/sublime
 export CLICOLOR=1
-# export LSCOLORS=ExFxCxDxBxegedabagacad
-# export LSCOLORS=GxFxCxDxBxegedabagaced
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # sandy specific alias
@@ -23,7 +21,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### script to setup proxy
 function setproxy()
 {
-    export {http,https,ftp}_proxy='http://PaloAltoService:Paloalto!!@ladcproxy.am.thmulti.com:80'
+    export {http,https,ftp}_proxy='http://username:passwd@proxy:80'
 }
 
 function unsetproxy()
