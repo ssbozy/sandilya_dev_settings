@@ -1,0 +1,55 @@
+{
+    "auto_match_enabled": true,
+    "bold_folder_labels": true,
+    "caret_style": "phase",
+    "close_windows_when_empty": false,
+    "color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+    "fade_fold_buttons": false,
+    "file_exclude_patterns":
+    [
+        ".*",
+        "*.pyc",
+        "*.pyo",
+        "*.exe",
+        "*.dll",
+        "*.obj",
+        "*.o",
+        "*.a",
+        "*.lib",
+        "*.so",
+        "*.dylib",
+        "*.ncb",
+        "*.sdf",
+        "*.suo",
+        "*.pdb",
+        "*.idb",
+        ".DS_Store",
+        "*.class",
+        "*.psd",
+        "*.db"
+    ],
+    "flatland_square_tabs": false,
+    "font_face": "Monaco",
+    "font_options": "subpixel_antialias",
+    "font_size": 12.5,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "match_brackets": true,
+    "match_tags": true,
+    "open_files_in_new_window": false,
+    "rulers":
+    [
+        80
+    ],
+    "tab_completion": true,
+    "tab_size": 4,
+    "theme": "Flatland Dark.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": true,
+    "wrap_width": 80
+}

@@ -1,0 +1,38 @@
+# sandy specific exports
+export PS1="\h :\w$ "
+export EDITOR=/usr/bin/sublime
+export CLICOLOR=1
+# export LSCOLORS=ExFxCxDxBxegedabagacad
+# export LSCOLORS=GxFxCxDxBxegedabagaced
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# sandy specific alias
+alias ll='ls -FGlAhp'
+alias edit='sublime'
+alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
+alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
+alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
+
+
+# MacPorts Installer adding an appropriate PATH variable for use with MacPorts.
+export PATH=/var/lib/mongodb/bin:/opt/local/bin:/opt/local/sbin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### script to setup proxy
+function setproxy()
+{
+    export {http,https,ftp}_proxy='http://PaloAltoService:Paloalto!!@ladcproxy.am.thmulti.com:80'
+}
+
+function unsetproxy()
+{
+    unset {http,https,ftp}_proxy
+}
+
+# other useful functions
+function mcd ()
+{
+    mkdir -p "$1" && cd "$1";
+}
