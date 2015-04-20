@@ -1,1 +1,1 @@
-This repo contains all the dev environment variables and settings. Feel free to clone them.
+This repo contains all my personal devolopment environment variables and settings. Feel free to clone them.
