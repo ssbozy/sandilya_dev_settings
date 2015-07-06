@@ -2,7 +2,6 @@
 export PS1="\h :\w$ "
 export EDITOR=/usr/bin/sublime
 export CLICOLOR=1
-#export LSCOLORS=ExFxBxDxCxegedabagacad
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # sandy specific alias
@@ -12,7 +11,7 @@ alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
 alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias rmdss="find . -name ‘.DS_Store’ -type f -delete"
-alias portupdate="sudo port selfupdate;sudo port upgrade outdated;sudo port uninstall inactive"
+alias portupdate="sudo port selfupdate;sudo port upgrade outdated;sudo port uninstall inactive;sudo port clean all"
 
 # MacPorts Installer adding an appropriate PATH variable for use with MacPorts.
 export PATH=/var/lib/mongodb/bin:/opt/local/bin:/opt/local/sbin:$PATH
