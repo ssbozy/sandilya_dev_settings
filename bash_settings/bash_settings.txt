@@ -45,6 +45,6 @@ function wifipassword ()
     if [ -z $WIFINETWORK ]; then
         echo "ERROR: Wifi Network name missing"
     else
-        security find-generic-password -ga $WIFINETWORK | grep password
+        security find-generic-password -wa $WIFINETWORK
     fi
 }
