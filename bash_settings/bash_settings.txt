@@ -41,6 +41,10 @@ function mcd ()
 
 function wifipassword ()
 {
-    security find-generic-password -ga "$1" | grep password
+    WIFINETWORK=$1
+    if [ -z $WIFINETWORK ]; then
+        echo "ERROR: Wifi Network name missing"
+    else
+        security find-generic-password -ga $WIFINETWORK | grep password
+    fi
 }
-
