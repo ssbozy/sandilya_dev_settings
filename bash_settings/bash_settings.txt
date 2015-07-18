@@ -6,12 +6,15 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # sandy specific alias
 alias ll='ls -FGlAhp'
-alias edit='sublime'
+alias edit='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
 alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias rmdss="find . -name ‘.DS_Store’ -type f -delete"
-alias portupdate="sudo port selfupdate;sudo port upgrade outdated;sudo port uninstall inactive;sudo port clean all"
+alias portupdate="sudo port selfupdate;
+                  sudo port upgrade outdated;
+                  sudo port uninstall inactive;
+                  sudo port clean all"
 
 # MacPorts Installer adding an appropriate PATH variable for use with MacPorts.
 export PATH=/var/lib/mongodb/bin:/opt/local/bin:/opt/local/sbin:$PATH
@@ -35,3 +38,9 @@ function mcd ()
 {
     mkdir -p "$1" && cd "$1";
 }
+
+function wifipassword ()
+{
+    security find-generic-password -ga "$1" | grep password
+}
+
