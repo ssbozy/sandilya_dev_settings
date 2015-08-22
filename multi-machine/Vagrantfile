@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/trusty64"
+
+    config.vm.define "webserver" do |web|
+        web.vm.provider "virtualbox" do |ws|
+            ws.name = "webserver"
+            ws.memory = 1024
+            ws.cpus = 1
+        end
+        web.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
+        web.vm.provision :shell, :path => "apache.sh"
+    end
+
+    config.vm.define "mongodb" do |mongodb|
+        mongodb.vm.provider "virtualbox" do |dbs|
+            dbs.name = "mongodb"
+            dbs.memory = 2048
+            dbs.cpus = 2
+        end
+        mongodb.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
+        mongodb.vm.provision :shell, :path => "mongo.sh"
+    end
+
+end
