@@ -1,0 +1,17 @@
+---
+- name: haproxy
+  ram: 512
+  cpus: 2
+  ip: 10.0.0.25
+- name: shard-01
+  ram: 512
+  cpus: 2
+  ip: 10.0.0.26
+- name: shard-02
+  ram: 512
+  cpus: 1
+  ip: 10.0.0.27
+- name: shard-03
+  ram: 512
+  cpus: 1
+  ip: 10.0.0.28

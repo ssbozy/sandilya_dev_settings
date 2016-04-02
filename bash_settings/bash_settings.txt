@@ -1,37 +1,26 @@
 # sandy specific exports
-export PS1="\h :\w$ "
-export EDITOR=/usr/bin/sublime
+export PS1="\[\e[1;35m\][\h]\[\e[m\] \[\e[1;33m\][\w]\[\e[m\] $ "
+export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/:$PATH"
+export EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+
+# Terminal color scheme
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # sandy specific alias
-alias ll='ls -FGlAhp'
-alias edit='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
-alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
-alias rmdss="find . -name ‘.DS_Store’ -type f -delete"
-alias portupdate="sudo port selfupdate;
-                  sudo port upgrade outdated;
-                  sudo port uninstall inactive;
-                  sudo port clean all"
+alias sudo="sudo "
+alias ll="ls -FGlAhp"
+alias finderShowHidden="defaults write com.apple.finder ShowAllFiles TRUE"
+alias finderHideHidden="defaults write com.apple.finder ShowAllFiles FALSE"
+alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
+alias dir="du -sm * | sort -nr"
+alias portupdate="sudo port selfupdate && sudo port upgrade outdated && sudo port clean --all installed && sudo port -f uninstall inactive"
 
-# MacPorts Installer adding an appropriate PATH variable for use with MacPorts.
-export PATH=/var/lib/mongodb/bin:/opt/local/bin:/opt/local/sbin:$PATH
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-### script to setup proxy
-function setproxy()
-{
-    export {http,https,ftp}_proxy='http://username:passwd@proxy:80'
-}
-
-function unsetproxy()
-{
-    unset {http,https,ftp}_proxy
-}
+alias edit="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias raspberry="ssh pi"
+alias dock_restart="sudo killall Dock"
+alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
 # other useful functions
 function mcd ()
