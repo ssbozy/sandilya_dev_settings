@@ -13,14 +13,14 @@ alias ll="ls -FGlAhp"
 alias finderShowHidden="defaults write com.apple.finder ShowAllFiles TRUE"
 alias finderHideHidden="defaults write com.apple.finder ShowAllFiles FALSE"
 alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
-alias dir="du -sm * | sort -nr"
-alias portupdate="sudo port selfupdate && sudo port upgrade outdated && sudo port clean --all installed && sudo port -f uninstall inactive"
 
 alias edit="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias raspberry="ssh pi"
 alias dock_restart="sudo killall Dock"
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+alias portupdate="sudo port selfupdate && sudo port upgrade outdated && sudo port clean --all installed && sudo port -f uninstall inactive"
+alias edit="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 
 # other useful functions
 function mcd ()
