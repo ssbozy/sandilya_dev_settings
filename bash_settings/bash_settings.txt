@@ -5,7 +5,7 @@ export EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/sub
 # Terminal color scheme
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 # sandy specific alias
 alias sudo="sudo "
 alias ll="ls -FGlAhp"
@@ -41,6 +41,14 @@ function wifipassword ()
 ##
 
 # MacPorts Installer addition on 2015-10-06_at_18:06:30: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+##
+# Your previous /Users/bhamidipati/.bash_profile file was backed up as /Users/bhamidipati/.bash_profile.macports-saved_2016-05-31_at_22:44:22
+##
+
+# MacPorts Installer addition on 2016-05-31_at_22:44:22: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
