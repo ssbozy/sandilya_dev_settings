@@ -27,7 +27,6 @@
         "*.psd",
         "*.db"
     ],
-    "flatland_square_tabs": false,
     "font_face": "Monaco",
     "font_options": "subpixel_antialias",
     "font_size": 12.5,
