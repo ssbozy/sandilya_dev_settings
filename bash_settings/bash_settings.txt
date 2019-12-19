@@ -1,14 +1,15 @@
 # sandy specific exports
 export PS1="\[\e[1;35m\][\h]\[\e[m\] \[\e[1;33m\][\w]\[\e[m\] $ "
-export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/:$PATH"
-export EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 
 # MacPorts Installer addition
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Terminal color scheme
 export CLICOLOR=1
+# for dark terminals
 export LSCOLORS=GxFxCxDxBxegedabagaced
+# light terminals
+# export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # sandy specific alias
 alias sudo="sudo "
@@ -18,23 +19,17 @@ alias finderHideHidden="defaults write com.apple.finder ShowAllFiles FALSE"
 alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
 alias dir="du -sm * | sort -nr"
 alias portupdate="sudo port selfupdate && sudo port upgrade outdated && sudo port clean --all installed && sudo port -f uninstall inactive"
-alias edit="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
-alias dock_restart="sudo killall Dock"
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
-# other useful functions
-function mcd ()
-{
-    mkdir -p "$1" && cd "$1";
-}
-
-function wifipassword ()
-{
-    WIFINETWORK=$1
-    if [ -z $WIFINETWORK ]; then
-        echo "ERROR: Wifi Network name missing"
-    else
-        security find-generic-password -wa $WIFINETWORK
-    fi
-}
+# History file updates
+# for better hash history
+# source: https://sanctum.geek.nz/arabesque/better-bash-history/
+shopt -s histappend
+shopt -s cmdhist
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:bg:fg:history'
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND='history -a'
