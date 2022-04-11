@@ -1,0 +1,39 @@
+# zsh PS1 from bash import
+export PROMPT='%F{yellow}%B%~%b%f %F{green}$%f '
+
+# MacPorts Installer addition
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+#adding pip binaries to path
+export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
+
+# adding mongodb to path 
+export PATH="/opt/mongodb/bin:$PATH"
+
+# MacOS Terminal color scheme
+export CLICOLOR=1
+
+# for dark terminals
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# arrow bindings for zsh left/right navigation
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+
+# sandy specific alias
+alias sudo="sudo "
+alias ll="ls -FGlAhp"
+alias finderShowHidden="defaults write com.apple.finder ShowAllFiles TRUE"
+alias finderHideHidden="defaults write com.apple.finder ShowAllFiles FALSE"
+alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
+alias portupdate="sudo port selfupdate && sudo port upgrade outdated && sudo port clean --all installed && sudo port -f uninstall inactive"
+alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+alias edit="subl"
+alias pyenv3="source $HOME/pyenv3.9/bin/activate"
+
+
+# bash-completion
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+	. /opt/local/etc/profile.d/bash_completion.sh
+fi
